@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
-const bookSchema = mongoose.Schema({
+const movieSchema = mongoose.Schema({
 	title: {
 		type: String,
 		required: true,
 	},
-	description: {
+	synopsis: {
 		type: String,
 	},
-	publishDate: {
+	releaseDate: {
 		type: Date,
 		required: true,
 	},
-	pageCount: {
+	runtime: {
 		type: Number,
 		required: true,
 	},
@@ -29,17 +29,17 @@ const bookSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	author: {
+	director: {
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
-		ref: 'Author',
+		ref: 'Director',
 	},
 });
 
-bookSchema.virtual('coverImagePath').get(function () {
+movieSchema.virtual('coverImagePath').get(function () {
 	if (this.coverImage && this.coverImageType) {
 		return `data:${this.coverImageType}; charset=utf-8;base64,${this.coverImage.toString('base64')}`;
 	}
 });
 
-module.exports = mongoose.model('Book', bookSchema);
+module.exports = mongoose.model('Movie', movieSchema);

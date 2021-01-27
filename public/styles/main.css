@@ -1,0 +1,71 @@
+@import './shared/variables.css';
+@import './header.css';
+@import './buttons.css';
+@import './add-movies.css';
+
+*,
+*::before,
+*::after,
+:root {
+	font-family: sans-serif;
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+body {
+	/* background: linear-gradient(to right, rgb(0, 102, 128), rgb(0, 128, 107)); */
+	background: rgb(0, 42, 48);
+	background-repeat: no-repeat;
+	width: 100%;
+	min-height: 100vh;
+	color: var(--text-light);
+}
+
+.page-header {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.btn {
+	cursor: pointer;
+	outline: none;
+}
+
+.director-name {
+	font-size: 1.5rem;
+	margin-top: 1.3rem;
+	display: flex;
+	align-content: center;
+	flex-direction: row;
+}
+
+.director-btns-container {
+	display: flex;
+}
+
+.inner-container {
+	padding: 3rem;
+}
+
+.form-row-end {
+	justify-content: flex-end;
+}
+
+.mb-1 {
+	margin-bottom: 0.5rem;
+}
+
+.movie-cover-image {
+	width: 200px;
+	height: 300px;
+	transition: transform 0.3s ease-in;
+}
+
+.movie-cover-image:hover {
+	transform: scale(1.05);
+}
+
+.movie-cover {
+	width: 200px;
+	height: 300px;
+}

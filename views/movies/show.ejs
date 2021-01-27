@@ -1,9 +1,9 @@
-<h2><%=movie.title %></h2>
-<img src="<%=movie.coverImagePath %>" alt="<%=movie.title %>" width="100px" height="150px" />
+<h2 class="page-header"><%=movie.title %></h2>
+<img src="<%=movie.coverImagePath %>" alt="<%=movie.title %>" class="movie-cover-image" />
 <div>Director: <%=movie.director.name %></div>
 <div>Release Date: <%=movie.releaseDate.toDateString().substring(4)%></div>
-<div>Runtime (mins): <%=movie.runtime %></div>
+<div>Runtime: <%=movie.runtime%> min</div>
 <div>Synopsis: <%=movie.synopsis %></div>
-<a href="/movies/<%=movie.id %>/edit">Edit</a>
+<a href="/movies/<%=movie.id %>/edit" class="btn view-edit-btn">Edit</a>
 <%-include('../partials/deleteForm.ejs', { url: `/movies/${movie.id}` }) %>
-<a href="/directors/<%=movie.director.id %>">View Director</a>
+<a href="/directors/<%=movie.director.id %>" class="btn view-edit-btn">View Director</a>

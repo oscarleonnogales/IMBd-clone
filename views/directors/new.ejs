@@ -1,6 +1,8 @@
-<h2>New Director</h2>
+<h2 class="page-header">New Director</h2>
 <form action="/directors" method="POST">
 	<%- include('_form_fields') %>
-	<a href="/directors">Cancel</a>
-	<button type="submit">Create</button>
+	<div class="form-row form-row-end btn-row">
+		<a href="/directors" class="btn danger-btn">Cancel</a>
+		<button type="submit" class="btn view-edit-btn">Create</button>
+	</div>
 </form>

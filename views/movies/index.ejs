@@ -1,24 +1,30 @@
-<h2>Search Movies</h2>
+<h2 class="page-header">Search Movies</h2>
 <form action="/movies" method="GET">
-	<div>
-		<label for="title">Title</label>
-		<input type="text" name="title" value="<%=searchOptions.title%>" />
+	<div class="form-row">
+		<div class="form-item">
+			<label for="title">Title</label>
+			<input type="text" name="title" value="<%=searchOptions.title%>" />
+		</div>
 	</div>
-	<div>
-		<label for="releasedAfter">Released After</label>
-		<input type="date" name="releasedAfter" value="<%=searchOptions.releasedAfter%>" />
+	<div class="form-row">
+		<div class="form-item">
+			<label for="releasedAfter">Released After</label>
+			<input type="date" name="releasedAfter" value="<%=searchOptions.releasedAfter%>" />
+		</div>
+		<div class="form-item">
+			<label for="releasedBefore">Released Before</label>
+			<input type="date" name="releasedBefore" value="<%=searchOptions.releasedBefore%>" />
+		</div>
 	</div>
-	<div>
-		<label for="releasedBefore">Released Before</label>
-		<input type="date" name="releasedBefore" value="<%=searchOptions.releasedBefore%>" />
+	<div class="form-row form-row-end">
+		<button type="submit" class="btn view-edit-btn">Search</button>
 	</div>
-	<button type="submit">Search</button>
 </form>
 <br />
 <div>
 	<% movies.forEach(movie => { %>
 	<a href="/movies/<%=movie.id %>">
-		<img height="150" width="100" src="<%=movie.coverImagePath%>" />
+		<img src="<%=movie.coverImagePath%>" class="movie-cover-image" />
 	</a>
 	<% }) %>
 </div>

@@ -1,9 +1,12 @@
-<h2><%=director.name %></h2>
-<a href="/directors/<%=director.id %>/edit">Edit</a>
-<%-include('../partials/deleteForm.ejs', {url: `${director.id}`}) %> <% if(moviesByDirector.length > 0) { %>
-<h2>Movies by Director</h2>
+<h2 class="page-header"><%=director.name %></h2>
+<div class="form-row form-item-no-grow">
+	<a href="/directors/<%=director.id %>/edit" class="btn view-edit-btn">Edit</a>
+	<% if(moviesByDirector.length === 0) { %> <%-include('../partials/deleteForm.ejs', {url: `${director.id}`}) %> <% } %>
+</div>
+<% if(moviesByDirector.length > 0) { %>
+<h2 class="page-header">Movies by Director</h2>
 <% moviesByDirector.forEach(movie => { %>
 <a href="/movies/<%=movie.id %>">
-	<img height="150" width="100" src="<%=movie.coverImagePath%>" />
+	<img class="movie-cover-image" src="<%=movie.coverImagePath%>" />
 </a>
 <% }) %> <% } %>

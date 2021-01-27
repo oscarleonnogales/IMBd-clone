@@ -1,39 +1,40 @@
-<div>
-	<label for="title">Title</label>
-	<input type="text" name="title" value="<%=movie.title %>" />
+<div class="form-row">
+	<div class="form-item">
+		<label for="title">Title</label>
+		<input type="text" name="title" value="<%=movie.title %>" />
+	</div>
+	<div class="form-item">
+		<label for="director">Director</label>
+		<select name="director">
+			<% directors.forEach(director => { %> <% if(director.id === movie.director) {%>
+			<option selected label="<%= director.name %>" value="<%= director.id %>"></option>
+			<% } else { %>
+			<option label="<%= director.name %>" value="<%= director.id %>"></option>
+			<% } %> <% }) %>
+		</select>
+	</div>
 </div>
-
-<div>
-	<label for="director">Director</label>
-	<select name="director">
-		<% directors.forEach(director => { %> <% if(director.id === movie.director) {%>
-		<option selected label="<%= director.name %>" value="<%= director.id %>"></option>
-		<% } else { %>
-		<option label="<%= director.name %>" value="<%= director.id %>"></option>
-		<% } %> <% }) %>
-	</select>
+<div class="form-row">
+	<div class="form-item">
+		<label for="releaseDate">Release Date</label>
+		<input
+			type="date"
+			name="releaseDate"
+			value="<%=movie.releaseDate == null ? '' : movie.releaseDate.toISOString().split('T')[0] %>"
+		/>
+	</div>
+	<div class="form-item">
+		<label for="runtime">Runtime (Mins)</label>
+		<input type="number" name="runtime" min="1" value="<%=movie.runtime %>" />
+	</div>
 </div>
-
-<div>
-	<label for="releaseDate">Release Date</label>
-	<input
-		type="date"
-		name="releaseDate"
-		value="<%=movie.releaseDate == null ? '' : movie.releaseDate.toISOString().split('T')[0] %>"
-	/>
-</div>
-
-<div>
-	<label for="runtime">Runtime (Mins)</label>
-	<input type="number" name="runtime" min="1" value="<%=movie.runtime %>" />
-</div>
-
-<div>
-	<label for="cover">Cover</label>
-	<input type="file" name="cover" class="filepond" />
-</div>
-
-<div>
-	<label for="synopsis">Synopsis</label>
-	<textarea name="synopsis"><%= movie.synopsis %></textarea>
+<div class="form-row">
+	<div class="form-item form-item-no-grow">
+		<label for="cover">Cover</label>
+		<input type="file" name="cover" class="filepond movie-cover" />
+	</div>
+	<div class="form-item">
+		<label for="synopsis">Synopsis</label>
+		<textarea name="synopsis"><%= movie.synopsis %></textarea>
+	</div>
 </div>

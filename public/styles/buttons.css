@@ -1,0 +1,37 @@
+.btn {
+	cursor: pointer;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	padding: 5px 20px;
+	border-radius: 5px;
+	font-size: inherit;
+	text-decoration: none;
+	color: white;
+	box-sizing: border-box;
+	border: 1px solid white;
+	margin-right: 15px;
+	font-size: 12px;
+}
+
+.view-edit-btn {
+	background-color: hsl(var(--base-hue), 100%, 55%);
+}
+
+.view-edit-btn:hover {
+	background-color: hsl(var(--base-hue), 100%, 40%);
+}
+
+.danger-btn {
+	background-color: hsl(var(--danger-hue), 100%, 55%);
+}
+
+.danger-btn:hover {
+	background-color: hsl(var(--danger-hue), 100%, 40%);
+}
+
+.btn-row {
+	display: flex;
+	flex-direction: row !important;
+	align-items: center;
+}

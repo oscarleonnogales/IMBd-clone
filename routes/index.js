@@ -5,7 +5,7 @@ const Movie = require('../models/movie');
 router.get('/', async (req, res) => {
 	let movies;
 	try {
-		movies = await Movie.find().sort({ createAt: 'desc' }).limit(10).exec();
+		movies = await Movie.find().sort({ createAt: 'desc' }).limit(8).exec();
 	} catch {
 		movies = [];
 	}

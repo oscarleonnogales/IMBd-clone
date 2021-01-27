@@ -108,7 +108,7 @@ router.delete('/:id', async (req, res) => {
 		if (movie) {
 			res.render('movies/show', {
 				movie: movie,
-				errorMessage: 'Could not remove movie',
+				errorMessage: 'Could Not Remove Movie',
 			});
 		} else {
 			res.redirect('/');
@@ -133,9 +133,9 @@ async function renderFormPage(res, movie, form, hasError = false) {
 		};
 		if (hasError) {
 			if (form === 'edit') {
-				params.errorMessage = 'Error updating movie';
+				params.errorMessage = 'Error Updating Movie';
 			} else {
-				params.errorMessage = 'Error creating movie';
+				params.errorMessage = 'Error Creating Movie';
 			}
 		}
 		res.render(`movies/${form}`, params);
@@ -145,7 +145,7 @@ async function renderFormPage(res, movie, form, hasError = false) {
 }
 
 function saveCover(movie, coverEncoded) {
-	if (coverEncoded == null) return;
+	if (coverEncoded == null || coverEncoded == '') return;
 	const cover = JSON.parse(coverEncoded);
 	if (cover != null && imageMimeTypes.includes(cover.type)) {
 		movie.coverImage = new Buffer.from(cover.data, 'base64');

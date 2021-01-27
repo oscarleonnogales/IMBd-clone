@@ -1,0 +1,44 @@
+.movie-details {
+	display: flex;
+}
+
+.movie-details-label {
+	font-size: 1.2rem;
+	font-weight: 700;
+	align-self: flex-start;
+}
+
+.movie-details-grid {
+	margin-left: 1rem;
+	display: grid;
+	align-content: flex-start;
+	align-items: center;
+	grid-gap: 1rem;
+	grid-template-columns: auto auto;
+}
+
+.movie-details-btn-grid {
+	display: grid;
+	justify-items: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+	grid-template-areas:
+		'edit delete'
+		'author author';
+	grid-gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.movie-details-btn-grid > a:first-child {
+	text-align: center;
+	width: 100%;
+}
+
+.movie-details-btn-grid > a:last-child {
+	text-align: center;
+	width: 88%;
+}
+
+.movie-details-director-btn {
+	grid-area: author;
+}

@@ -1,5 +1,5 @@
 {
-	"name": "library-tutorial",
+	"name": "imbd-clone",
 	"version": "1.0.0",
 	"description": "",
 	"main": "server.js",
